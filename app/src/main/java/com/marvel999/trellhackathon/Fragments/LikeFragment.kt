@@ -16,10 +16,8 @@ class LikeFragment : Fragment() {
 
     private lateinit var viewModel: LikeViewModel
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.like_fragment, container, false)
     }
 

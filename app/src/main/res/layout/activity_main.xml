@@ -7,12 +7,16 @@
     android:background="@color/purple_200"
     tools:context=".MainActivity">
 
-    <ImageButton
+    <FrameLayout
+        android:id="@+id/hostFrament"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Like"
-        android:src="@drawable/ic_android_black_24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
