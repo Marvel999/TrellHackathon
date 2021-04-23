@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.github.pgreze.reactions.ReactionPopup
 import com.github.pgreze.reactions.dsl.reactionConfig
 import com.github.pgreze.reactions.dsl.reactions
@@ -35,6 +36,7 @@ class LikeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val likeButton=view.findViewById<Button>(R.id.button);
+        val nextBtn=view.findViewById<ImageView>(R.id.next_btn)
 
         val config = reactionConfig(this.requireContext()) {
             reactions {
@@ -57,6 +59,10 @@ class LikeFragment : Fragment() {
         likeButton.setOnClickListener {
             likeButton.setOnTouchListener(popup);
 
+        }
+
+        nextBtn.setOnClickListener{
+            findNavController().navigate(R.id.action_checkVideoFragment);
         }
     }
 

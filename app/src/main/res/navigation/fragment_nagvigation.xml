@@ -17,5 +17,30 @@
         app:popUpTo="@id/fragment_nagvigation"
         app:enterAnim="@anim/nav_default_pop_enter_anim"
         app:exitAnim="@anim/nav_default_pop_exit_anim" />
+    <fragment
+        android:id="@+id/checkVideoFragment"
+        android:name="com.marvel999.trellhackathon.Fragments.CheckVideoFragment"
+        android:label="check_video_fragment"
+        tools:layout="@layout/check_video_fragment" />
+    <fragment
+        android:id="@+id/videoFragment"
+        android:name="com.marvel999.trellhackathon.Fragments.VideoFragment"
+        android:label="video_fragment"
+        tools:layout="@layout/video_fragment" >
 
+    </fragment>
+
+    <action
+        android:id="@+id/action_checkVideoFragment"
+        app:destination="@id/checkVideoFragment"
+        app:popUpTo="@id/fragment_nagvigation"
+        app:enterAnim="@anim/nav_default_pop_enter_anim"
+        app:exitAnim="@anim/nav_default_pop_exit_anim"/>
+
+    <action
+        android:id="@+id/action_videoFragment"
+        app:destination="@id/videoFragment"
+        app:popUpTo="@id/fragment_nagvigation"
+        app:enterAnim="@anim/nav_default_pop_enter_anim"
+        app:exitAnim="@anim/nav_default_pop_exit_anim"/>
 </navigation>
