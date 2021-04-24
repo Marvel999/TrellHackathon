@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -31,6 +32,7 @@ class CheckVideoFragment : Fragment() {
 
     private lateinit var viewModel: CheckVideoViewModel
     private lateinit var result:TextView;
+    private lateinit var nextBtn:ImageView;
     private lateinit var portrait:ImageView;
     private lateinit var landscape:ImageView;
 
@@ -73,6 +75,10 @@ class CheckVideoFragment : Fragment() {
             Toast.makeText(this.requireContext(),""+mode,Toast.LENGTH_LONG).show()
             setText("Width=${bit.width}\n"+"Height=${bit.height}\n"+mode);
         }
+
+        nextBtn.setOnClickListener{
+            findNavController().navigate(R.id.action_videoFragment)
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -80,6 +86,8 @@ class CheckVideoFragment : Fragment() {
         result=view.findViewById(R.id.result)
         portrait=view.findViewById(R.id.portrait)
         landscape=view.findViewById(R.id.landscape)
+        nextBtn=view.findViewById(R.id.next_btn)
+
     }
 
     private fun setText(str:String){
