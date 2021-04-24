@@ -2,6 +2,7 @@ package com.marvel999.trellhackathon
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import com.marvel999.trellhackathon.utils.LikeSharedPreferences
 
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -20,5 +21,15 @@ class ExampleInstrumentedTest {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
         assertEquals("com.marvel999.trellhackathon", appContext.packageName)
+    }
+
+    //Test Like sharedPrefrance
+    @Test
+    fun `TestSharePrefrerences`() {
+        // Context of the app under test.
+        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
+        val likesp=LikeSharedPreferences(appContext)
+        likesp.setLike("Like,1")
+        assertEquals("Like,1",likesp.getLike())
     }
 }
