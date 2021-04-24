@@ -7,13 +7,38 @@
     tools:context=".Fragments.CheckVideoFragment">
 
     <TextView
+        android:id="@+id/result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Next iS Aseem's fragment name Video Fragment"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Result"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/portrait"
+        android:layout_width="100dp"
+        android:layout_height="200dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/potrate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/result" />
+
+
+    <ImageView
+        android:id="@+id/landscape"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:src="@drawable/landscape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/result" />
+
+
 
     <ImageView
         android:id="@+id/next_btn"

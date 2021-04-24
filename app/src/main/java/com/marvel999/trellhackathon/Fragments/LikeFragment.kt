@@ -18,7 +18,8 @@ import com.marvel999.trellhackathon.utils.LikeUtil
 
 class LikeFragment : Fragment() {
 
-
+    private lateinit var nextBtn:ImageView;
+    private lateinit var likeButton:Button;
 
     private lateinit var viewModel: LikeViewModel
 
@@ -30,14 +31,6 @@ class LikeFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(LikeViewModel::class.java)
-
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        val likeButton=view.findViewById<Button>(R.id.button);
-        val nextBtn=view.findViewById<ImageView>(R.id.next_btn)
-
         val config = reactionConfig(this.requireContext()) {
             reactions {
                 resId    { R.drawable.ic_heart }
@@ -62,8 +55,17 @@ class LikeFragment : Fragment() {
         }
 
         nextBtn.setOnClickListener{
+
             findNavController().navigate(R.id.action_checkVideoFragment);
         }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+         likeButton=view.findViewById<Button>(R.id.button);
+         nextBtn=view.findViewById<ImageView>(R.id.next_btn)
+
+
     }
 
 }
