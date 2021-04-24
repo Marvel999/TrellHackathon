@@ -1,5 +1,7 @@
 package com.marvel999.trellhackathon
 
+import com.marvel999.trellhackathon.utils.CheckVideoConstants
+import com.marvel999.trellhackathon.utils.CheckVideoUtils
 import com.marvel999.trellhackathon.utils.LikeUtil
 import com.marvel999.trellhackathon.utils.RectionConstants
 import org.junit.Test
@@ -43,5 +45,19 @@ class ExampleUnitTest {
     }
     }
 
+//    Test mode
+    @Test
+      fun `Test Mode`(){
+          for(i in 1..5){
+              for (j in 1..5){
+                  if(i<=j){
+                      assertEquals(CheckVideoConstants.PORTRAIT_MODE,CheckVideoUtils.getMode(CheckVideoUtils.portrait(i,j)))
+                  }
+                  else{
+                      assertEquals(CheckVideoConstants.LANDSCAPE_MODE,CheckVideoUtils.getMode(CheckVideoUtils.portrait(i,j)))
+                  }
+              }
+          }
+      }
 
 }
